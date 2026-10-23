@@ -13,3 +13,8 @@ def hello(request):
     """Greets the caller. Optional ?name= query parameter."""
     name = request.query_params.get("name", "World")
     return Response({"message": f"Hello, {name}!"})
+
+@api_view(["GET"])
+def version(request):
+    """Returns the current API version."""
+    return Response({"version": "1.1.0", "name": "csc325-ci-cd-pipeline"})
